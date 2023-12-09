@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import SearchInput from "../components/SearchInput";
 import styles from "../styles/home.module.scss";
 import axios, { AxiosResponse, AxiosError } from "axios";
+import Product from "../components/Product";
 
 type ProductImages = {
   alt: string;
@@ -60,13 +61,18 @@ export default function Home() {
           </form>
         </div>
 
-        <div>
+        <div className="animeUp">
           <span>Resultados: {products ? products.length : 0}</span>
-          <ul>
-            {products?.map((product, index) => (
-              <li key={index}>{product.name}</li>
-            ))}
-          </ul>
+          <div className={styles.productsGrid}>
+              {products?.map((product, index) => (
+                <Product
+                  key={index}
+                  image={product.images[0].asset.url}
+                  alt={product.images[0].alt}
+                  name={product.name}
+                />
+              ))}
+          </div>
         </div>
         
       </div>
