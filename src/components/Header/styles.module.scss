@@ -6,7 +6,8 @@
   .container {
     display: flex;
     align-items: center;
-    max-width: 50rem;
+    justify-content: space-between;
+    max-width: 60rem;
     height: 100%;
     margin: 0 auto;
     padding: 1rem 0;
