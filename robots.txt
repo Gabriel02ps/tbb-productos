@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow: /clientes/
+Disallow: /not-for-google
+User-agent: *
+Disallow: /arquivo/
+Disallow: /suporte/
+Sitemap: http://localhost:5174/
