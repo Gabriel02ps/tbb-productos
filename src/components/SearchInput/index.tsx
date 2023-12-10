@@ -15,7 +15,7 @@ export default function SearchInput({ placeholder, value, onChange }: SearchInpu
       value={value}
       onChange={onChange}
     />
-    <img src="/icons/search.svg" alt="Ícone de pesquisa" />
+    <img src="/icons/search.svg" alt="Ícone de pesquisa"/>
   </div>
   )
 }

@@ -1,0 +1,23 @@
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+
+  input[type="checkbox"] {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    margin: 0 !important;
+    
+    accent-color: var(--red-300)
+  }
+
+  label {
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    color: var(--gray-700)
+  }
+}

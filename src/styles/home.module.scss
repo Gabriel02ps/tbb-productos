@@ -6,69 +6,79 @@
   justify-content: center;
   align-items: center;
 
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    max-width: 70rem;
-    gap: 2rem;
+  .content {
+    min-width: 50rem;
+    margin: 0 auto;
 
     @media (min-width: 320px) and (max-width: 768px) {
-      grid-template-columns: 1fr;
+      min-width: 20rem;
     }
 
-    h2 {
-      width: 100%;
-      height: auto;
-      font-size: 1.5rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      padding-bottom: 0.5rem;
-
-      @media (min-width: 320px) and (max-width: 768px) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+    input {
+      margin-bottom: 2rem;
     }
 
-    .form {
-      width: 100%;
-
-      @media (min-width: 320px) and (max-width: 768px) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-    span {
-      color: var(--black);
-      font-size: 1.25rem;
-      font-weight: bold;
-
-      @media (min-width: 320px) and (max-width: 768px) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-
-    .productsGrid {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
 
-      @media (min-width: 320px) and (max-width: 425px) {
+      @media (min-width: 320px) and (max-width: 768px) {
         grid-template-columns: 1fr;
-        justify-items: center;
       }
 
-      @media (min-width: 425px) and (max-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
+      span {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+
+        color: var(--gray-700);
+      }
+
+      .products {
+        h1 {
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 1.25rem;
+          font-weight: 900;
+          color: var(--white);
+          background-color: var(--blue-300);
+          padding: 5px 2px;
+          letter-spacing: 0.24em;
+        }
+
+        h2 {
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 1.25rem;
+          font-weight: 900;
+          color: var(--white);
+          background-color: var(--red-300);
+          padding: 5px 2px;
+          letter-spacing: 0.24em;
+        }
+        
+        .search {
+          margin-top: 1rem;
+        }
+      }
+
+      .productsGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+
+        @media (min-width: 320px) and (max-width: 425px) {
+          grid-template-columns: 1fr;
+          justify-items: center;
+        }
+
+        @media (min-width: 425px) and (max-width: 768px) {
+          grid-template-columns: repeat(2, 1fr);
+          justify-items: center;
+        }
       }
     }
-  }  
+  }
 }
