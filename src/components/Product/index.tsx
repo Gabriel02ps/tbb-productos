@@ -6,13 +6,11 @@ type ProductProps = {
   name: string;
 };
 
-const Product = ({ image, alt, name }: ProductProps) => {
+export default function Product({ image, alt, name }: ProductProps) {
   return (
     <div className={`${styles.product} animeUp`}>
       <img src={image} alt={alt} />
       <p>{name}</p>
     </div>
   );
-};
-
-export default Product;
+}

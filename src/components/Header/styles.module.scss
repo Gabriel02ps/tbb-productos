@@ -1,29 +1,20 @@
 .header {
   background: var(--black);
   width: 100%;
-  color: var(--white);
 
   .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    max-width: 70rem;
+    justify-content: center;
     height: 100%;
     margin: 0 auto;
     padding: 1rem 0;
-
-    @media (min-width: 320px) and (max-width: 768px) {
-      justify-content: center;
-    }
 
     img {
       width: 90px;
       height: 40px;
     }
 
-    p {
-      margin-left: 1rem;
-      padding-left: 0.8rem;
-    }
+   
   }
 }
