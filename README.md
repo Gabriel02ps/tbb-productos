@@ -41,7 +41,7 @@ Before starting, you need to have [Git](https://git-scm.com) and [Node](https://
 $ git clone https://github.com/Gabriel02ps/tbb-productos.git
 
 - Enter directory:
-$ cd tbb-products
+$ cd tbb-productos
 
 - Install dependencies:
 $ npm install
