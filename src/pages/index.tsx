@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import SearchInput from "../components/SearchInput";
 import axios, { AxiosResponse, AxiosError } from "axios";
 import Product from "../components/Product";
@@ -25,21 +25,16 @@ export type Product = {
 };
 
 export default function Home() {
-  const [products, setProducts] = useState<Product[]>([]);
   const [inputSearch, setInputSearch] = useState<string>("");
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
-  const handleInputSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    console.log('inputSearch', inputSearch);
-    
-  };
-  
+  const [products, setProducts] = useState<Product[]>([]);
+  const [productsBackup, setProductsBackup] = useState<Product[]>([]);
   const getProducts = async () => {
     await axios
       .get<Product[]>("/db/products.json")
       .then((response: AxiosResponse) => {
         setProducts(response.data.data.nodes);
+        setProductsBackup(response.data.data.nodes);
       })
       .catch((error: AxiosError) => console.log(error));
   };
@@ -47,6 +42,45 @@ export default function Home() {
   useEffect(() => {
     getProducts();
   }, []);
+  
+  const filterProducts = useCallback(() => {
+    if (inputSearch === "" && selectedFilters.length === 0) {
+      return productsBackup;
+    }
+  
+    if (inputSearch !== "" && selectedFilters.length) {
+      return productsBackup?.filter((product) =>
+        selectedFilters.includes(product.category.name) &&
+        product.name.toLowerCase().includes(inputSearch.toLowerCase())
+      );
+    }
+  
+    if (inputSearch === "" && selectedFilters.length) {
+      return productsBackup?.filter((product) =>
+        selectedFilters.includes(product.category.name)
+      );
+    }
+  
+    if (inputSearch !== "" && selectedFilters.length === 0) {
+      return productsBackup?.filter((product) =>
+        product.name.toLowerCase().includes(inputSearch.toLowerCase())
+      );
+    }
+  
+    return [];
+  }, [inputSearch, productsBackup, selectedFilters]);
+  
+  useEffect(() => {
+    setProducts(filterProducts());
+  }, [filterProducts]);
+  
+  const handleInputSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  
+    setProducts(filterProducts());
+  };
+  
+  if (!products) return null;
 
   return (
     <div className={styles.container}>
@@ -65,7 +99,7 @@ export default function Home() {
                   />
               </form>
             <Filters
-              products={products}
+              products={productsBackup}
               selectedFilters={selectedFilters}
               setSelectedFilters={setSelectedFilters}
             />
