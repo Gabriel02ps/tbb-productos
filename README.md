@@ -1,30 +1,53 @@
-# React + TypeScript + Vite
+<h1 align="center">
+    <img alt="TBB Productos" title="TBB Productos" src=".github/logo.png" width="220px" />
+</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-how-to-run">How to run</a>
+</p>
 
-Currently, two official plugins are available:
+<p align="center">
+  <img alt="TBB Productos" src=".github/tbb-productos.png" width="100%">
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💻 Project
 
-## Expanding the ESLint configuration
+A product catalog web app developed during The Brooklyn Brothers's technical test using <b>React.js</b>, <b>TypeScript</b>, styles with <b>Sass</b>, data fetching with <b>Axios</b> and local back-end with <b>Json data file</b>.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 💻 SEO Performance
 
-- Configure the top-level `parserOptions` property like this:
+The web application has been meticulously designed with a strong emphasis on achieving optimal <b>SEO</b> metrics. From its architecture to user interface, every detail has been carefully considered to enhance search engine visibility.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+<p align="center">
+  <img alt="SEO" src=".github/performance.png" width="300px" height='350px'>
+</p>
+
+
+## 🔧 Technologies
+
+- [React.js](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Sass](https://sass-lang.com/)
+- [Axios](https://axios-http.com/docs/intro)
+
+## 😊 How to run
+
+Before starting, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed on your machine.
+
+```sh
+- Clone this repo:
+$ git clone https://github.com/Gabriel02ps/tbb-productos.git
+
+- Enter directory:
+$ cd tbb-products
+
+- Install dependencies:
+$ npm install
+
+- Launch the app:
+$ npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Have fun!
